@@ -1,8 +1,9 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json
-from utils import schemas, transforms
+from src.schemas import schemas
+from src.trasforms import transforms
 import argparse
-import config
+import src.config as config
 
 def postgres_sink(data_frame, table):
     data_frame.show()
