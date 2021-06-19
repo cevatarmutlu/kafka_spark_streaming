@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
-from sql import a_query
-from utils import get_conn
+from src.sql import a_query
+from src.utils import get_conn
 
 
 def transform_datas(datas):
@@ -26,7 +26,3 @@ def main():
     now = datetime.now().strftime("%Y-%d-%m, %H")
 
     transformed_datas.to_csv(f"./a_{now}.csv")
-
-
-# if __name__ == "__main__":
-#     main()

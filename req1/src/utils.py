@@ -2,7 +2,7 @@ import psycopg2
 import yaml
 
 def __load_yaml__():
-    return yaml.safe_load(open("req1/config.yml"))
+    return yaml.safe_load(open("src/config.yml"))
 
 def get(name):
     yaml_file = __load_yaml__()

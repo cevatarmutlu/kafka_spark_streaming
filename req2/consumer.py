@@ -2,13 +2,13 @@ from confluent_kafka import Consumer
 import pandas
 import json
 from datetime import datetime, timedelta
-import sys
-import time
-import os
+import src.config as config
 
-category = pandas.read_csv("dataprocessing/data/product-category-map.csv")
+category = pandas.read_csv("src/product-category-map.csv")
+kafka = config.get('kafka')
 
-kafka_advanced_listener = 'PLAINTEXT://localhost:9092'
+
+kafka_advanced_listener = kafka['url']
 topic_name = 'product'
 
 c = Consumer(

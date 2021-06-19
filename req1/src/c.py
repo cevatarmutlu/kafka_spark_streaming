@@ -2,8 +2,8 @@ import pandas as pd
 from pandas.core.frame import DataFrame
 from datetime import datetime
 import os
-from utils import get_conn
-from sql import c_query
+from src.utils import get_conn
+from src.sql import c_query
 
 
 def main():
@@ -21,6 +21,3 @@ def main():
       exist_data = pd.read_csv(f"c_{current_day}.csv")
       exist_data[str(current_time.hour + 1)] = datas['d']
       exist_data.to_csv(f"c_{current_day}.csv", index=False)
-
-# if __name__ == "__main__":
-#    main()
