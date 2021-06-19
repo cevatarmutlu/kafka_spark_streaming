@@ -12,6 +12,7 @@
 
 from confluent_kafka import Producer
 import time
+from datetime import datetime
 import json
 import argparse
 from datetime import datetime
@@ -48,7 +49,7 @@ def delivery_report(err, msg):
     if err != None:
         print('Message delivery failed: {}'.format(err))
     else:
-        print('Message delivered to topic: {}, partition: [{}]'.format(msg.topic(), msg.partition()))
+        print(f'Message delivered to topic: {msg.topic()}, partition: [{msg.partition()}], time: {datetime.now().strftime("%H:%M:%S")}')
 
 if __name__ == "__main__":
 

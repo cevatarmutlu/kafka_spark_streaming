@@ -16,6 +16,14 @@ pip3 install -r requirements.txt
 
 `producer.py` kendisine verilen parametrelere göre `json` dosyasını okuyup, belirtilen `Kafka` `topic`' ine belirtilen sürede bir verileri yazar.
 
+### Çalışma Örneği
+
+```
+python3 producer.py --topic product --file src/data/product-views.json --second 1
+```
+
+![calisma_ornegi](src/run.png)
+
 ### Kullanım
 
 ```
