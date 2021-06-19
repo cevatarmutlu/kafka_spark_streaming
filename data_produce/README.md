@@ -1,10 +1,42 @@
 ## Data Product
 
-Bu sistem `json` dosyalarını `Kafka`' ya belirli sürede bir yazan sistemdir.
+Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. Tasarım hatası olarak sadece `ndjson` formatını destekler.
 
-### Kurulum
+### Nasıl kurulur?
 
-Öncelikle sisteminizde `Kafka` kurulu olmalıdır. Daha sonra gerekli `python` kütüphaneleri için;
+Öncelikle sisteminizde `Kafka` kurulu olmalıdır. Bu sistem geliştirilirken `Kafka` kurulumu için `docker` kullanılmıştır. Kullanmış olduğum `docker-compose` dosyası aşağıdaki gibidir;
+
+```yaml
+version: '2'
+services: 
+    zookeeper:
+        image: confluentinc/cp-zookeeper:latest
+        environment: 
+            ZOOKEEPER_CLIENT_PORT: 2181
+    
+    kafka:
+        image: confluentinc/cp-kafka:latest
+        depends_on: 
+            - zookeeper
+        ports: 
+            - 9092:9092
+        environment: 
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    
+    db:
+        image: postgres
+        depends_on: 
+            - kafka
+        environment:
+            POSTGRES_PASSWORD: "123"
+        ports:
+            - 5432:5432
+            
+```
+
+Sistemin çalışması için gerekli `python` kütüphanelerini ise aşağıdaki komutla kurabilirsiniz;
 
 ```
 pip3 install -r requirements.txt
@@ -12,28 +44,19 @@ pip3 install -r requirements.txt
 
 ### Calisma Mantığı
 
-![diagram](src/diagram.png)
+![diagram](img/diagram.png)
 
-`producer.py` kendisine verilen parametrelere göre `json` dosyasını okuyup, belirtilen `Kafka` `topic`' ine belirtilen sürede bir verileri yazar.
-
-### Çalışma Örneği
-
-```
-python3 producer.py --topic product --file src/data/product-views.json --second 1
-```
-
-![calisma_ornegi](src/run.png)
-
-### Kullanım
-
-```
-python3 producer.py --topic order --file src/data/orders.json --second 60
-
-python3 producer.py --topic product --file src/data/product-views.json --second 1
-```
+Yukarıdaki resimde de görüldüğü gibi `producer.py` dosyası birden fazla kez çalıştırılarak belirli `json` dosyaları aynı anda belirli `Kafka` `topic`' lerine yazılır.
 
 
-### Klasör yapısı
+`producer.py` dosyası `ndjson` formatındaki verileri `ndjson.py` script' i sayesinde `list` formatında elde eder.
+
+`producer.py`, `Kafka`' nın çalıştığı url' ı `config.yml` dosyasından `config.py` sayesinde elde eder.
+
+`producer.py`, hangi `ndjson` dosyasını okuyacağını, veriyi hangi `topic`' e yazacağını ve verinin hangi sürede bir  `Kafka`' ya yazılacağını argümanlar ile elde eder.
+
+Aşağıda klasör yapısını görebilirsiniz.
+
 ```bash
 .
 ├── producer.py
@@ -42,12 +65,13 @@ python3 producer.py --topic product --file src/data/product-views.json --second 
 └── src
     ├── config.py
     ├── config.yml
-    ├── data
-    │   ├── orders.json
-    │   └── product-views.json
-    ├── diagram.png
     └── ndjson.py
 
-2 directories, 9 files
+1 directory, 6 files
 ```
 
+### Nasıl çalıştırılır?
+
+```
+python3 producer.py --topic product --file data/product-views.json --second 1
+```
