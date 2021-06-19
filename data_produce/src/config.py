@@ -1,5 +1,5 @@
 """
-    Bu script config.yml dosyasındaki verileri getirmeye yarar.
+    Bu script config.yml dosyasındaki verileri okumaya yarar.
 """
 
 import yaml
