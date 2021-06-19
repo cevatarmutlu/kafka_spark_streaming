@@ -7,7 +7,7 @@ Bu sistem `json` dosyalarını `Kafka`' ya belirli sürede bir yazan sistemdir.
 Öncelikle sisteminizde `Kafka` kurulu olmalıdır. Daha sonra gerekli `python` kütüphaneleri için;
 
 ```
-    pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Calisma Mantığı
@@ -19,9 +19,9 @@ Bu sistem `json` dosyalarını `Kafka`' ya belirli sürede bir yazan sistemdir.
 ### Kullanım
 
 ```
-    python3 producer.py --topic order --file src/data/orders.json --second 60
+python3 producer.py --topic order --file src/data/orders.json --second 60
 
-    python3 producer.py --topic product --file src/data/product-views.json --second 1
+python3 producer.py --topic product --file src/data/product-views.json --second 1
 ```
 
 
