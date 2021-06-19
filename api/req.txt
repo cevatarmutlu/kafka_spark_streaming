@@ -1,0 +1,6 @@
+python-dev-tools
+psycopg2
+flask
+flask_cors
+flask_sqlalchemy
+requests
