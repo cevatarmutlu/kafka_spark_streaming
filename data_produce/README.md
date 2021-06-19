@@ -1,6 +1,13 @@
 ## Data Product
 
-Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. Tasarım hatası olarak sadece `ndjson` formatını destekler.
+Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. `Kafka`' ya yazılan veriler hiçbir temizleme işlemi olmadan olduğu gibi yazılmaktadır. 
+
+## İçindekiler
+
+* [Nasıl Kurulur](#nasıl-kurulur)
+* [Çalışma Sistemi](#calisma-sistemi)
+* [Nasıl Çalıştırılır](#nasıl-çalıştırılır)
+* [Eksikler ve Hatalar](#eksikler-ve-hatalar)
 
 ### Nasıl kurulur?
 
@@ -42,7 +49,7 @@ Sistemin çalışması için gerekli `python` kütüphanelerini ise aşağıdaki
 pip3 install -r requirements.txt
 ```
 
-### Calisma Mantığı
+### Calisma Sistemi
 
 ![diagram](img/diagram.png)
 
@@ -75,3 +82,9 @@ Aşağıda klasör yapısını görebilirsiniz.
 ```
 python3 producer.py --topic product --file data/product-views.json --second 1
 ```
+
+
+### Eksikler ve Hatalar
+
+1. Sistem sadece `ndjson` formatındaki verileri okuyup `Kafka`' ya yazıyor. Yeni bir format eklenmek istese sistemde değişiklik yapılmak zorundadır.
+2. Unittest yok.
