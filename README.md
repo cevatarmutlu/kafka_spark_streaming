@@ -91,4 +91,4 @@ Burada böyle çıkmasının sebebi DB' yi çok beslemeden çıktıları almam o
 
 ## Requirenment-3: api
 
-![a](img/api_1.png)
+![a](img/api.png)
