@@ -1,4 +1,4 @@
-## Req-2
+## Marketing Department
 
 Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time olarak aşağıdaki işlemleri gerçekleştirir;
 1. Son 5 dakika içinde herhangi bir ürünü görüntüleyen kullanıcılar
