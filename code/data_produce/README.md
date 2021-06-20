@@ -1,4 +1,4 @@
-## Data Product
+## Data Produce
 
 Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 60 saniyede bir- `Kafka`' ya yazmaya yarar. `Kafka`' ya yazılan veriler hiçbir temizleme işlemi olmadan olduğu gibi yazılmaktadır. 
 
