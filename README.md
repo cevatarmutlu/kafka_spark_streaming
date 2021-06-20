@@ -49,6 +49,14 @@ Modül | Yaptığı iş
 [api](code/api)                                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
 
 
+## Kurulum ve çalıştırma
+
+Modullerin repo sayfalarında kurulum bilgileri bulunmaktadır.
+
+Reponun root dizinindeki config.yml dosyasında bağlantı bilgileri bulunmaktadır.
+
+Modülleri kendi dizinlerinden çalıştırın.
+
 ## İstenen Çıktılar
 
 ## Requirenment-1: category_management
