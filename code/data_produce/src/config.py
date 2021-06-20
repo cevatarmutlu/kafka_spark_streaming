@@ -11,7 +11,7 @@ def __load_yaml__() -> dict:
         Return:
             dict: yml dosyasının tamamı.
     """
-    return yaml.safe_load(open("src/config.yml"))
+    return yaml.safe_load(open("../../config.yml"))
 
 def get(name: str) -> dict:
     """

@@ -13,6 +13,7 @@ def writeToCSV(datas):
    csv_path = f"{cfg['output_path']}/conversion_rates_{current_day}.csv"
 
    if not os.path.exists(csv_path):
+      datas = datas.rename(columns={'0': current_time.hour})
       datas.to_csv(csv_path, index=False)
    else:
       exist_data = pd.read_csv(csv_path)

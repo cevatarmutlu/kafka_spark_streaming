@@ -74,7 +74,8 @@ while True:
 
         result_df = pandas.DataFrame(data=data_dict)
 
-        print("\n\n", result_df, "\n\n")
+        print("\n\n", datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
+        print(result_df, "\n\n")
         
 
 c.close() # Buraya hiç girmiyor.

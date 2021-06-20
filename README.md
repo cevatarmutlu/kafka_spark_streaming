@@ -30,6 +30,8 @@ Flask       | API yazabilmek için
 SQLAlchemy  | API için veritabanı sorgularını daha kolay yapmak için kullanıldı
 Pandas      | CSV dosyalarını oluşturmak için
 
+>**Reponun root dizinindeki config.yml dosyasında `Kafka`, `PostgreSQL` bağlantı bilgilerini girebilirsiniz**
+
 
 ## Çalışma Sistemi
 
@@ -38,7 +40,7 @@ Pandas      | CSV dosyalarını oluşturmak için
 
 ### Modüller ve yaptığı işler
 
-Kurulum ve daha fazla bilgi için modüllere tıklayınız.
+Kurulum ve daha fazla bilgi için modüllere tıklayınız. **Modülleri kendi dizinlerinden çalıştırın.**
 
 Modül | Yaptığı iş
 ----- | ----------
@@ -49,25 +51,21 @@ Modül | Yaptığı iş
 [api](code/api)                                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
 
 
-## Kurulum ve çalıştırma
-
-Modullerin repo sayfalarında kurulum bilgileri bulunmaktadır.
-
-Reponun root dizinindeki config.yml dosyasında bağlantı bilgileri bulunmaktadır.
-
-Modülleri kendi dizinlerinden çalıştırın.
-
 ## İstenen Çıktılar
 
 ## Requirenment-1: category_management
 
 ![viewed](img/category_managament_1.png)
 
+Bu işlemleri saatlik olarak gerçekleştirmek için AirFlow kullanılabilir.
+
 ### A
 
 ![a](img/category_managament_2.png)
 
 ### B
+
+Burada böyle çıkmasının sebebi DB' yi çok beslemeden çıktıları almam olabilir ya da sorgu yanlış yazılmış olabilir. Yazdığım sorgu ile ilgili bilgi almak [için](code/category_management#sorgu-mantiğı)
 
 ![b](img/category_managament_3.png)
 
@@ -77,9 +75,7 @@ Modülleri kendi dizinlerinden çalıştırın.
 
 ## Requirenment-2: marketing_department
 
-![a](img/marketing_department_1.png)
-
-![a](img/marketing_department_2.png)
+![a](img/marketing_department.gif)
 
 ## Requirenment-3: api
 
