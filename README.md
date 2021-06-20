@@ -71,13 +71,13 @@ Modül | Yaptığı iş
 
 Bu işlemleri saatlik olarak gerçekleştirmek için AirFlow kullanılabilir.
 
+Yazdığım sorgular ile ilgili bilgi almak [için](code/category_management#sorgu-mantiğı)
+
 ### A
 
 ![a](img/category_managament_2.png)
 
 ### B
-
-Burada böyle çıkmasının sebebi DB' yi çok beslemeden çıktıları almam olabilir ya da sorgu yanlış yazılmış olabilir. Yazdığım sorgu ile ilgili bilgi almak [için](code/category_management#sorgu-mantiğı)
 
 ![b](img/category_managament_3.png)
 
