@@ -38,6 +38,7 @@ Pandas      | CSV dosyalarını oluşturmak için
 
 ### Modüller ve yaptığı işler
 
+Kurulum ve daha fazla bilgi için modüllere tıklayınız.
 
 Modül | Yaptığı iş
 ----- | ----------
@@ -46,52 +47,3 @@ Modül | Yaptığı iş
 [category_management](code/category_management)     | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
 [marketing_department](code/marketing_department)    | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
 [api](code/api)                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
-
-
-## Parçalı Anlatım
-
-### data_produce
-
-Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. `Kafka`' ya yazılan veriler hiçbir temizleme işlemi olmadan olduğu gibi yazılmaktadır. 
-
-[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/data_produce)
-
-### data_consumer
-
-Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` okur, okuduğu veriyi temizleyerek `postgreSQL` veritabanındaki belirli tablolara yazar.
-
-[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/data_consumer)
-
-
-### category_management
-
-Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılarak aşağıdaki işlemler gerçekleştirir;
-1. farklı kullanıcıların, her bir kategoride en fazla görüntülediği 10 ürünü
-2. farklı kullanıcıların, her bir kategoride en fazla satın alıdığı 10 ürünü
-3. her kategiri için (satın alınan / görünlenen) oranı
-
-Çalışma şekli aşağıdaki gibidir:
-
-![req1-diagram](img/req1-diagram.png)
-
-******************************************
-/*Buraya screnshot' ler gelecek*/
-******************************************
-
-[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/req1)
-
-### marketing_department
-
-Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time olarak aşağıdaki işlemleri gerçekleştirir;
-1. Son 5 dakika içinde herhangi bir ürünü görüntüleyen kullanıcılar
-2. Son 5 dakika içinde görüntülenen ürünlerin kategorileri
-3. Son 5 dakika içinde görüntülenen ürünlerin platformları
-
-[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/req2)
-
-
-### api
-
-Bu modül kendine verilen kullanıcın görüntülediği en son 5 ürünü dönen bir API' dır.
-
-[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/api)
