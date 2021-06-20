@@ -1,4 +1,4 @@
-## Req-2
+## API
 
 Bu modül kendine verilen kullanıcın görüntülediği en son 5 ürünü dönen bir API' dır.
 
@@ -20,6 +20,12 @@ pip3 install -r requirements.txt
 
 ### Calisma Sistemi
 
+![diagram](img/diagram.png)
+
+`Product.py` bir `SQLAlchemy` model' idir.
+
+Sistemde api için `Flask` kullanılmıştır.
+
 
 ### Nasıl çalıştırılır?
 
@@ -29,5 +35,3 @@ python3 app.py
 
 
 ### Eksikler ve Hatalar
-
-1. Kod yazımı kötü
