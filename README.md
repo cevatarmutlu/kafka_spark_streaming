@@ -24,6 +24,13 @@ Hepsiburada' nın atmış olduğu case kodları.
 
 ## Parçalı Anlatım
 
+### data_produce
+
+Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. `Kafka`' ya yazılan veriler hiçbir temizleme işlemi olmadan olduğu gibi yazılmaktadır. 
+
+[Daha Fazla bilgi ve kurulum](tree/master/code/data_produce)
+
+
 ### req-1
 
 Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılarak aşağıdaki işlemler gerçekleştirir;
