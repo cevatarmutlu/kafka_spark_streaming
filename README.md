@@ -18,14 +18,17 @@ Bana gönderdikleri verileri kullanarak benden istedikleri şeyler;
 
 ## Kullanılan Teknolojiler
 
-1. Kafka
-2. PostgreSQL
-3. Docker -> Kafka ve PostgreSQL
-4. Python3.8
-5. Spark Streaming -> Verileri temizleyip PostgreSQL' e yazmak için
-6. Flask -> API için.
-7. SQLAlchemy -> API sorguları için
-8. Pandas -> CSV dosyası oluşturmak için
+Teknoloji   | Kullanımı
+---------   | ---------
+Kafka       | Sistemler için ortak veri platformu
+PostgreSQL  | Temizlenen verilerin yazıldığı DB.
+Docker      | Kafka ve PostgreSQL
+Python3.8   | Sistemin yazıldığı dil
+Spark       | Kafka' dan veriyi okuyup, temizleyip DB' ye yazmak için
+Flask       | API yazabilmek için
+SQLAlchemy  | API için veritabanı sorgularını daha kolay yapmak için kullanıldı
+Pandas      | CSV dosyalarını oluşturmak için
+
 
 ## Çalışma Sistemi
 
@@ -41,7 +44,7 @@ data_produce    | Gönderilen data dosyalarını Kafka' ya yazar.
 data_consumer   | Kafka' dan veri okur ve PostgreSQL' e yazar
 req-1           | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
 req-2           | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
-API             | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
+api             | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
 
 
 ## Parçalı Anlatım

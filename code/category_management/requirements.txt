@@ -1,0 +1,5 @@
+python-dev-tools
+pandas
+psycopg2
+PyYAML
+pyspark
