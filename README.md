@@ -41,11 +41,11 @@ Pandas      | CSV dosyalarını oluşturmak için
 
 Modül | Yaptığı iş
 ----- | ----------
-data_produce            | Gönderilen data dosyalarını Kafka' ya yazar.
-data_consumer           | Kafka' dan veri okur ve PostgreSQL' e yazar
-category_management     | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
-marketing_department    | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
-api                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
+[data_produce](code/data_produce)           | Gönderilen data dosyalarını Kafka' ya yazar.
+[data_consumer](code/data_consumer)           | Kafka' dan veri okur ve PostgreSQL' e yazar
+[category_management](code/category_management)     | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
+[marketing_department](code/marketing_department)    | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
+[api](code/api)                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
 
 
 ## Parçalı Anlatım
