@@ -28,7 +28,13 @@ Hepsiburada' nın atmış olduğu case kodları.
 
 Bu sistem `ndjson` formatında verilmiş dosyaları, belirli sürede bir -mesela 5 saniyede bir- `Kafka`' ya yazmaya yarar. `Kafka`' ya yazılan veriler hiçbir temizleme işlemi olmadan olduğu gibi yazılmaktadır. 
 
-[Daha Fazla bilgi ve kurulum](tree/master/code/data_produce)
+[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/data_produce)
+
+### data_consumer
+
+Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` okur, okuduğu veriyi temizleyerek `postgreSQL` veritabanındaki belirli tablolara yazar.
+
+[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/data_consumer)
 
 
 ### req-1
@@ -46,6 +52,8 @@ Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılara
 /*Buraya screnshot' ler gelecek*/
 ******************************************
 
+[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/req1)
+
 ### req-2
 
 Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time olarak aşağıdaki işlemleri gerçekleştirir;
@@ -53,6 +61,11 @@ Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time ol
 2. Son 5 dakika içinde görüntülenen ürünlerin kategorileri
 3. Son 5 dakika içinde görüntülenen ürünlerin platformları
 
+[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/req2)
+
+
 ### api
 
 Bu modül kendine verilen kullanıcın görüntülediği en son 5 ürünü dönen bir API' dır.
+
+[Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/api)
