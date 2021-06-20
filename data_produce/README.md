@@ -60,7 +60,7 @@ Yukarıdaki resimde de görüldüğü gibi `producer.py` dosyası birden fazla k
 
 `producer.py`, `Kafka`' nın çalıştığı url' ı `config.yml` dosyasından `config.py` sayesinde elde eder.
 
-`producer.py`, hangi `ndjson` dosyasını okuyacağını, veriyi hangi `topic`' e yazacağını ve verinin hangi sürede bir  `Kafka`' ya yazılacağını argümanlar ile elde eder.
+`producer.py`, hangi `ndjson` dosyasını okuyacağını(--file), veriyi hangi `topic`' e yazacağını(--topic) ve verinin hangi sürede(--second) bir  `Kafka`' ya yazılacağını argümanlar ile elde eder.
 
 Aşağıda klasör yapısını görebilirsiniz.
 
