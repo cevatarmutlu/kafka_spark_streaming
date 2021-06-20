@@ -15,7 +15,8 @@ def orderTransform(data):
         'orderid', 
         col('userid').cast('integer'), 
         product.getItem(1).alias('productid').cast('integer'), 
-        products_line_by_line['products_line_by_line']['quantity'].alias("quantity")
+        products_line_by_line['products_line_by_line']['quantity'].alias("quantity"),
+        'timestamp'
     )
 
     return cleaning_data

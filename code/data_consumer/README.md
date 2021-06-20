@@ -1,6 +1,6 @@
 ## Data Consumer
 
-Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` okur, okuduğu veriyi temizleyerek `postgreSQL` veritabanındaki belirli tablolara yazar.
+Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` ile okur, okuduğu veriyi temizleyerek `PostgreSQL` veritabanındaki belirli tablolara yazar.
 
 ## İçindekiler
 
@@ -11,37 +11,7 @@ Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` 
 
 ### Nasıl Kurulur?
 
-Öncelikle sisteminizde `Kafka` ve `Spark` kurulu olmalıdır. `Spark` kurulumu ile ilgili bir şey anlatılmayacaktır. Bu sistem geliştirilirken `Kafka` kurulumu için `docker` kullanılmıştır. Kullanmış olduğum `docker-compose` dosyası aşağıdaki gibidir;
-
-```yaml
-version: '2'
-services: 
-    zookeeper:
-        image: confluentinc/cp-zookeeper:latest
-        environment: 
-            ZOOKEEPER_CLIENT_PORT: 2181
-    
-    kafka:
-        image: confluentinc/cp-kafka:latest
-        depends_on: 
-            - zookeeper
-        ports: 
-            - 9092:9092
-        environment: 
-            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-    
-    db:
-        image: postgres
-        depends_on: 
-            - kafka
-        environment:
-            POSTGRES_PASSWORD: "123"
-        ports:
-            - 5432:5432
-            
-```
+Öncelikle sisteminizde `Kafka` ve `Spark` kurulu olmalıdır. `Spark` kurulumu ile ilgili bir şey anlatılmayacaktır. Kullanmış olduğum `docker-compose` dosyası repo' nun root dizininde bulunmaktadır.
 
 `Spark`' ın `Kafka`' dan okuduğu verileri `PostgreSQL`' e yazabilmesi `postgresql jdbc jar`' ı gerekmektedir. Kullanıdığım jar' ı sisteminize indirmek için;
 
@@ -91,6 +61,8 @@ Aşağıda klasör yapısını görebilirsiniz.
 
 ```
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 --driver-class-path postgresql-42.2.5.jar consumer.py --topic order --table orders
+
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 --driver-class-path postgresql-42.2.5.jar consumer.py --topic product --table product_view
 ```
 
 
