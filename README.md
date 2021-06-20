@@ -2,6 +2,20 @@
 
 Hepsiburada' nın atmış olduğu case kodları.
 
+Bana gönderdikleri verileri kullanarak benden istedikleri şeyler;
+
+* Kategori yönetiminin saatlik olarak belirli dosya formatında istediği veriler
+    * Herbir ürün kategorisi için farklı kullanıcılar tarafından en fazla görüntülenen 10 ürün.
+    * Herbir ürün kategorisi için farklı kullanıcılar tarafından en fazla satın alınan 10 ürün.
+    * Her bir ürün kategorisi için (satın alma / görüntülenme) sayısı
+
+* Pazarlama departmanı için gerçek zamanlı analizler
+    * Son 5 dakika içinde ürün görüntüleyen kullanıcılar
+    * Son 5 dakika içinde ürün görüntülenen kategoriler
+    * Son 5 dakika içinde ürün görüntülenen platformlar
+
+* Kullanıcılara ürün tavsiye etmek için id numarasi verilen kullanıcının incelediği 5 ürünü dönen bir API
+
 ## Kullanılan Teknolojiler
 
 1. Kafka
@@ -11,16 +25,24 @@ Hepsiburada' nın atmış olduğu case kodları.
 5. Spark Streaming -> Verileri temizleyip PostgreSQL' e yazmak için
 6. Flask -> API için.
 7. SQLAlchemy -> API sorguları için
+8. Pandas -> CSV dosyası oluşturmak için
 
 ## Çalışma Sistemi
 
 ![diagram](img/diagram.png)
 
-* data_produce: Kafka' ya veri yazar.
-* data_consumer: Kafka' dan veri okur PostgreSQL' e yazar
-* req-1: DB' den verileri okuyarak csv dosyalarını elde eder.
-* req-2: Kafka' dan veri okuyarak realtime olaral verileri print eder
-* API ise kendisine verileren user' ın görüntülediği son 5 ürünü response eder.
+
+### Modüller ve yaptığı işler
+
+
+Modül | Yaptığı iş
+--- | ---
+data_produce    | Gönderilen data dosyalarını Kafka' ya yazar.
+data_consumer   | Kafka' dan veri okur ve PostgreSQL' e yazar
+req-1           | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
+req-2           | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
+API             | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
+
 
 ## Parçalı Anlatım
 
