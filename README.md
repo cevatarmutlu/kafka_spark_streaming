@@ -1,6 +1,6 @@
 ## Hepsiburada Case
 
-Hepsiburadanın atmış olduğu case kodları.
+Hepsiburada' nın atmış olduğu case kodları.
 
 ## Kullanılan Teknolojiler
 
@@ -15,3 +15,37 @@ Hepsiburadanın atmış olduğu case kodları.
 ## Çalışma Sistemi
 
 ![diagram](img/diagram.png)
+
+* data_produce: Kafka' ya veri yazar.
+* data_consumer: Kafka' dan veri okur PostgreSQL' e yazar
+* req-1: DB' den verileri okuyarak csv dosyalarını elde eder.
+* req-2: Kafka' dan veri okuyarak realtime olaral verileri print eder
+* API ise kendisine verileren user' ın görüntülediği son 5 ürünü response eder.
+
+## Parçalı Anlatım
+
+### req-1
+
+Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılarak aşağıdaki işlemler gerçekleştirir;
+1. farklı kullanıcıların, her bir kategoride en fazla görüntülediği 10 ürünü
+2. farklı kullanıcıların, her bir kategoride en fazla satın alıdığı 10 ürünü
+3. her kategiri için (satın alınan / görünlenen) oranı
+
+Çalışma şekli aşağıdaki gibidir:
+
+![req1-diagram](img/req1-diagram.png)
+
+******************************************
+/*Buraya screnshot' ler gelecek*/
+******************************************
+
+### req-2
+
+Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time olarak aşağıdaki işlemleri gerçekleştirir;
+1. Son 5 dakika içinde herhangi bir ürünü görüntüleyen kullanıcılar
+2. Son 5 dakika içinde görüntülenen ürünlerin kategorileri
+3. Son 5 dakika içinde görüntülenen ürünlerin platformları
+
+### api
+
+Bu modül kendine verilen kullanıcın görüntülediği en son 5 ürünü dönen bir API' dır.
