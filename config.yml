@@ -7,4 +7,4 @@ postgres:
     driver: org.postgresql.Driver
     format: jdbc
 category_management:
-    output_path: ../../deneme
+    output_path: ../../category_management_outcome

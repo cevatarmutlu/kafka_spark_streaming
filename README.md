@@ -47,3 +47,32 @@ Modül | Yaptığı iş
 [category_management](code/category_management)     | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
 [marketing_department](code/marketing_department)    | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
 [api](code/api)                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
+
+
+## İstenen Çıktılar
+
+## Requirenment-1: category_management
+
+![viewed](img/category_managament_1.png)
+
+### A
+
+![a](img/category_managament_2.png)
+
+### B
+
+![b](img/category_managament_3.png)
+
+### C
+
+![c](img/category_managament_4.png)
+
+## Requirenment-2: marketing_department
+
+![a](img/marketing_department_1.png)
+
+![a](img/marketing_department_2.png)
+
+## Requirenment-3: api
+
+![a](img/api_1.png)
