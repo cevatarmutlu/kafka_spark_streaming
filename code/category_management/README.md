@@ -29,6 +29,7 @@ pip3 install -r requirements.txt
 
 Sistemin düzgün çalışabilmesi için `product-category-map.csv` dosyasını `PostgreSQL`' e yazmamız gerekmektedir. Bu işlem için sisteminizde `Spark` olmalı. CSV dosyasını `PostgreSQL`' e yazmak için;
 ```
+curl https://jdbc.postgresql.org/download/postgresql-42.2.5.jar --output postgresql-42.2.5.jar
 python3 src/utils/write_csv_to_postgre.py 
 ```
 
