@@ -45,7 +45,7 @@ def writeToPostgre(dataFrame, tableName):
 
 
 if __name__ == '__main__':
-    spark_jars = '/home/sade/.local/share/DBeaverData/drivers/maven/maven-central/org.postgresql/postgresql-42.2.5.jar'
+    spark_jars = 'postgresql-42.2.5.jar'
     session = generate_session(spark_jars)
     df = read_csv(session, 'data/product-category-map.csv')
     transformed_df = transfromData(df, transfromProCatCsv)
