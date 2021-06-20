@@ -16,6 +16,18 @@ Bana gönderdikleri verileri kullanarak benden istedikleri şeyler;
 
 * Kullanıcılara ürün tavsiye etmek için id numarasi verilen kullanıcının incelediği 5 ürünü dönen bir API
 
+## İçindekiler
+
+* [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
+* [Çalışma Sistemi](#çalışma-sistemi)
+    * [Modüller ve yaptığı işler](#modüller-ve-yaptığı-işler)
+* [İstenen Çıktılar](##i̇stenen-çıktılar)
+    * [Requirenment-1: category_management](#requirenment-1-category_management)
+    * [Requirenment-2: marketing_department](#requirenment-2-marketing_department)
+    * [Requirenment-3: api](#requirenment-3-api)
+* [Eksikler ve Hatalar](#eksikler-ve-hatalar)
+
+
 ## Kullanılan Teknolojiler
 
 Teknoloji   | Kullanımı
