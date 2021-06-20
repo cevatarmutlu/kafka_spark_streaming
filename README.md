@@ -20,6 +20,7 @@ Bana gönderdikleri verileri kullanarak benden istedikleri şeyler;
 
 Teknoloji   | Kullanımı
 ---------   | ---------
+Linux       | Sistem Linux üzerinde kurulmuştur. Ubuntu dağıtımı
 Kafka       | Sistemler için ortak veri platformu
 PostgreSQL  | Temizlenen verilerin yazıldığı DB.
 Docker      | Kafka ve PostgreSQL
@@ -39,12 +40,12 @@ Pandas      | CSV dosyalarını oluşturmak için
 
 
 Modül | Yaptığı iş
---- | ---
-data_produce    | Gönderilen data dosyalarını Kafka' ya yazar.
-data_consumer   | Kafka' dan veri okur ve PostgreSQL' e yazar
-req-1           | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
-req-2           | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
-api             | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
+----- | ----------
+data_produce            | Gönderilen data dosyalarını Kafka' ya yazar.
+data_consumer           | Kafka' dan veri okur ve PostgreSQL' e yazar
+category_management     | DB' den verileri okuyarak kategori yönetimi için istenen csv dosyalarını elde eder.
+marketing_department    | Pazarlama departmanının talep ettiği gerçek zamanlı analizler gerçekleştirir
+api                     | Kullanıcılara ürün tavsiye etmek için belirli kullanıcının incelediği 5 ürünü döner
 
 
 ## Parçalı Anlatım
@@ -62,7 +63,7 @@ Bu sistem `Kafka`' daki belirli `topic`' lerde bulunan veriyi `Spark streaming` 
 [Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/data_consumer)
 
 
-### req-1
+### category_management
 
 Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılarak aşağıdaki işlemler gerçekleştirir;
 1. farklı kullanıcıların, her bir kategoride en fazla görüntülediği 10 ürünü
@@ -79,7 +80,7 @@ Bu modül `PostgreSQL`' e yazılan orders ve product-views verileri kullanılara
 
 [Daha Fazla bilgi ve kurulum](https://github.com/cevatarmutlu/hepsiburada_case/tree/master/code/req1)
 
-### req-2
+### marketing_department
 
 Bu modül `Kafka`' ya yazılan product-views verileri kullanılarak real-time olarak aşağıdaki işlemleri gerçekleştirir;
 1. Son 5 dakika içinde herhangi bir ürünü görüntüleyen kullanıcılar
