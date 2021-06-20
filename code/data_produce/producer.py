@@ -17,7 +17,7 @@ import json
 import argparse
 from datetime import datetime
 
-from src.ndjson import get_data
+import src.ndjson as ndjson
 import src.config as config
 
 def getVariables():
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     topic, file_path, second = getVariables()
 
-    datas = get_data(file_path)
+    datas = ndjson.get_data(file_path)
 
     kafka_cfg = config.get("kafka")
 
