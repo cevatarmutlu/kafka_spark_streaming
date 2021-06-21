@@ -62,20 +62,20 @@ while True:
             platforms.pop(0)
             categories.pop(0)
     
-        # print(active_users)
-        # print(platforms)
-        # print(categories)
-
         data_dict = {
             'user': active_users,
             'category': categories,
             'platform': platforms
         }
 
-        result_df = pandas.DataFrame(data=data_dict)
+        active_users_df = pandas.DataFrame(data={'userid': active_users})
+        categories_df = pandas.DataFrame(data={'category': categories}).groupby('category').size()
+        platforms_df = pandas.DataFrame(data={'platform': platforms}).groupby('platform').size()
 
         print("\n\n", datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
-        print(result_df, "\n\n")
+        print(active_users_df, "\n")
+        print(categories_df, "\n")
+        print(platforms_df, "\n\n")
         
 
 c.close() # Buraya hiç girmiyor.

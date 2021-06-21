@@ -87,7 +87,11 @@ Yazdığım sorgular ile ilgili bilgi almak [için](code/category_management#sor
 
 ## Requirenment-2: marketing_department
 
-![a](img/marketing_department.gif)
+![a](img/marketing_department_1.gif)
+
+![a](img/marketing_department_2.gif)
+
+![a](img/marketing_department_3.gif)
 
 ## Requirenment-3: api
 
