@@ -1,8 +1,3 @@
-## Hepsiburada Case
-
-Hepsiburada' nın atmış olduğu case kodları.
-
-Bana gönderdikleri verileri kullanarak benden istedikleri şeyler;
 
 * Kategori yönetiminin saatlik olarak belirli dosya formatında istediği veriler
     * Herbir ürün kategorisi için farklı kullanıcılar tarafından en fazla görüntülenen 10 ürün.
